@@ -1,22 +1,12 @@
+import Helpers
+
 def execute():
 	print('Problem 3 Largest prime factor')
 
-	is_prime = lambda number: all(number % i != 0 for i in range(2, int(number ** .5) + 1))
-
-	def prime_series(max_number):
-		primes = []
-		for index in range(2, max_number):
-			if is_prime(index):
-				primes.append(index)
-			else:
-				pass
-
-		return primes
-
-	prime_numbers = prime_series(13195)
+	prime_numbers = Helpers.prime_series(13195)
 
 	def find_prime_factors(number):
-		if is_prime(number):
+		if Helpers.is_prime(number):
 			return [number]
 
 		factors = []
